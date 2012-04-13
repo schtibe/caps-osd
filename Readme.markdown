@@ -31,7 +31,7 @@ with the SIGUSR1 signal the OSD can be toggled.
 awesome wm keybinding
 --------
 
-I put this in my rc.lua2:
+I put this in my rc.lua:
 
     caps_pid = awful.util.spawn("/home/sh/bin/caps-osd")
 	
