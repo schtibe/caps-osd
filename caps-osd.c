@@ -8,7 +8,7 @@ xosd *osd;
 
 int osd_shown = 0;
 
-void signaler(int s) {
+void toggleOSD(int s) {
 	if (osd_shown) {
 		xosd_hide(osd);
 		osd_shown = 0;
@@ -20,7 +20,7 @@ void signaler(int s) {
 
 void registerSignal() {
 	struct sigaction sigIntHandler;
-	sigIntHandler.sa_handler = signaler;
+	sigIntHandler.sa_handler = toggleOSD;
 	sigemptyset(&sigIntHandler.sa_mask);
 	sigIntHandler.sa_flags = 0;
 	sigaction(SIGUSR1, &sigIntHandler, NULL);
