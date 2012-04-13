@@ -9,8 +9,6 @@ xosd *osd;
 int osd_shown = 0;
 
 void signaler(int s) {
-	printf("Caught signal %d\n", s);
-
 	if (osd_shown) {
 		xosd_hide(osd);
 		osd_shown = 0;
