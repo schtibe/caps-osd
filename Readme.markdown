@@ -32,9 +32,11 @@ awesome wm keybinding
 --------
 
 I put this in my rc.lua2:
+
     caps_pid = awful.util.spawn("/home/sh/bin/caps-osd")
 	
 and in the key binding section
+
     awful.key({}, "Caps_Lock",
     NULL,
     function() 
