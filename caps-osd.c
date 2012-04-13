@@ -19,11 +19,13 @@ void toggleOSD(int s) {
 }
 
 void registerSignal() {
-	struct sigaction sigIntHandler;
-	sigIntHandler.sa_handler = toggleOSD;
-	sigemptyset(&sigIntHandler.sa_mask);
-	sigIntHandler.sa_flags = 0;
-	sigaction(SIGUSR1, &sigIntHandler, NULL);
+	struct sigaction sigHandler;
+
+	sigHandler.sa_handler = toggleOSD;
+	sigemptyset(&sigHandler.sa_mask);
+	sigHandler.sa_flags = 0;
+
+	sigaction(SIGUSR1, &sigHandler, NULL);
 }
 
 int main (int argc, char *argv[]) {
